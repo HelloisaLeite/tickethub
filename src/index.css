@@ -1,0 +1,43 @@
+:root {
+    /* Body */
+    --body-background-color: #F3F3F3;
+
+    /* Botões */
+    --primary-button-color: #032554;
+    --primary-button-hover-color: #0c3877;
+    --primary-button-text-color: #ffffff;
+    --secondary-button-color: #ffffff;
+    --secondary-button-hover-color: #f0f0f0;
+    --secondary-button-border-color: #b7b7b7;
+    --secondary-danger-button-text-color: #BA3B3B;
+    --secondary-ok-button-text-color: #032554;
+    --button-text-weight: 500;
+
+    /* Textos */
+    --primary-text-color: #161616;
+    --primary-text-font-size: 16px;
+    --secondary-text-color: #4A4949;
+    --text-placeholder-color: #4A4949;
+    --text-font-weight: 300;
+    --text-font-family: 'Poppins', sans-serif;
+    --title-font-family: 'Poppins', sans-serif;
+    --title-color: #032554;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--body-background-color);
+    font-family: var(--text-font-family);
+}
+
+p,
+a {
+    color: var(--primary-text-color);
+    font-size: var(--primary-text-font-size);
+    font-weight: var(--text-font-weight);
+}
