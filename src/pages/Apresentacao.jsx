@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import logo from "../assets/logo-tickethub.png";
 import "./Apresentacao.css";
+import LinkBotao from "../components/LinkBotao";
 
 function Apresentacao() {
   return (
@@ -10,11 +11,13 @@ function Apresentacao() {
         <img src={logo} alt="Logo do TicketHub" className="logo" />
       </div>
 
-      <p>Registre problemas, acompanhe chamados e facilite a manutencão do campus!</p>
+      <div className="descricao">
+        <p>Registre problemas, acompanhe chamados e facilite a manutencão do campus!</p>
+      </div>
 
-      <Link to="/chamados" className="btn">
-        Acessar Chamados
-      </Link>
+      <LinkBotao to="/chamados" variante="primary">
+        Acessar Chamados →
+      </LinkBotao>
 
     </main>
   );

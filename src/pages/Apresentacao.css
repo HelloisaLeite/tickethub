@@ -9,5 +9,13 @@
 }
 
 .logo-container img{
-    width: 110vh;
+    width: 100%;
+    height: auto;
+}
+
+.descricao {
+    margin-top: 5px;
+    margin-bottom: 30px;
+    width: 450px;
+    text-align: center;
 }
