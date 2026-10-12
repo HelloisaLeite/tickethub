@@ -1,5 +1,9 @@
+import Header from "../components/Header";
+
 function DetalheChamado() {
-  return <h1>Detalhe do Chamado</h1>;
+  return (
+    <Header />
+  )
 }
 
 export default DetalheChamado;

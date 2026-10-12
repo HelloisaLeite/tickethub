@@ -1,5 +1,9 @@
+import Header from "../components/Header";
+
 function FormularioChamado() {
-  return <h1>Formulário de Chamado</h1>;
+  return (
+    <Header />
+  )
 }
 
 export default FormularioChamado;
