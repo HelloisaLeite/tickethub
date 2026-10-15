@@ -8,7 +8,7 @@
     --primary-button-text-color: #ffffff;
     --secondary-button-color: #ffffff;
     --secondary-button-hover-color: #f0f0f0;
-    --secondary-button-border-color: #b7b7b7;
+    --secondary-button-border-color: #b7b7b7c7;
     --secondary-danger-button-text-color: #BA3B3B;
     --secondary-ok-button-text-color: #032554;
     --button-text-weight: 500;
@@ -21,7 +21,13 @@
     --text-font-weight: 300;
     --text-font-family: 'Poppins', sans-serif;
     --title-font-family: 'Poppins', sans-serif;
-    --title-color: #032554;
+    --primary-title-color: #032554;
+    --secondary-title-color: #161616;
+
+    /* Status */
+    --aberto-status-color: #032554;
+    --em-andamento-status-color: #5494C2;
+    --resolvido-status-color: #A9A9A9;
 }
 
 * {
@@ -33,6 +39,11 @@
 body {
     background-color: var(--body-background-color);
     font-family: var(--text-font-family);
+}
+
+h1 {
+    color: var(--secondary-title-color);
+    font-size: 32px;
 }
 
 p,

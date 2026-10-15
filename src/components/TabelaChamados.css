@@ -1,0 +1,50 @@
+
+.tabela-container {
+  width: 80%;
+  overflow-x: auto;
+  border: 1px solid var(--secondary-button-border-color);
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+.tabela-chamados {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.tabela-chamados th,
+.tabela-chamados td {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--secondary-button-border-color);
+  white-space: nowrap;
+}
+
+.tabela-chamados th {
+  color: var(--secondary-text-color);
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.tabela-chamados td {
+  color: var(--primary-text-color);
+  font-size: 14px;
+}
+
+.tabela-chamados td a {
+  color: var(--primary-title-color);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.tabela-chamados td a:hover {
+  text-decoration: underline;
+}
+
+.tabela-chamados tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.tabela-chamados tbody tr:hover {
+  background-color: #ecf4ff;
+}

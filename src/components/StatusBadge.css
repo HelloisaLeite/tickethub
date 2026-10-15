@@ -1,0 +1,17 @@
+.status {
+    color: var(--primary-button-text-color);
+    padding: 4px 8px;
+    border-radius: 20px;
+}
+
+.status-aberto {
+    background-color: var(--aberto-status-color);
+}
+
+.status-em-andamento {
+    background-color: var(--em-andamento-status-color);
+}
+
+.status-resolvido {
+    background-color: var(--resolvido-status-color);
+}
