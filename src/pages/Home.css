@@ -34,9 +34,24 @@
     height: 40px;
 }
 
-@media (max-width: 1024) {
+@media (max-width: 1024px) {
     .filtros select {
-        width: 100px;
+        width: 150px;
+        height: 30px;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .filtros select {
+        width: 90px;
+        height: 30px;
+    }
+}
+
+@media (max-width: 425px) {
+    .filtros select {
+        width: 60px;
         height: 30px;
     }
 }

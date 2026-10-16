@@ -38,6 +38,10 @@
     .header-content {
         padding: 0 100px;
     }
+
+    .profile p {
+        font-size: 14px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -51,5 +55,9 @@
 
     .profile img {
         display: none;
+    }
+
+    .profile p {
+        font-size: 13px;
     }
 }
