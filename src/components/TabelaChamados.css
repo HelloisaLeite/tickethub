@@ -48,3 +48,10 @@
 .tabela-chamados tbody tr:hover {
   background-color: #ecf4ff;
 }
+
+
+@media (max-width: 1024px) {
+  .tabela-container {
+    width: 86%;
+  }
+}

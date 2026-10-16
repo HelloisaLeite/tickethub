@@ -14,7 +14,7 @@ function TabelaChamados({ chamados }) {
                         <th>Local</th>
                         <th>Prioridade</th>
                         <th>Status</th>
-                        <th>Data de abertura</th>
+                        <th>Data</th>
                     </tr>
                 </thead>
                 <tbody>

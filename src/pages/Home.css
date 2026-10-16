@@ -19,3 +19,24 @@
     
 }
 
+.filtros {
+    display: flex;
+    gap: 15px;
+    margin: 20px;
+}
+
+.filtros select {
+    background-color: var(--select-color);
+    color: var(--text-placeholder-color);
+    border-color: var(--select-border-color);
+    border-radius: 5PX;
+    width: 210px;
+    height: 40px;
+}
+
+@media (max-width: 1024) {
+    .filtros select {
+        width: 100px;
+        height: 30px;
+    }
+}

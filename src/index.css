@@ -28,6 +28,10 @@
     --aberto-status-color: #032554;
     --em-andamento-status-color: #5494C2;
     --resolvido-status-color: #A9A9A9;
+
+    /* Filtro */
+    --select-color: #F2F2F2;
+    --select-border-color: #b7b7b7;
 }
 
 * {
@@ -44,6 +48,11 @@ body {
 h1 {
     color: var(--secondary-title-color);
     font-size: 32px;
+}
+
+h4 {
+    color: var(--secondary-title-color);
+    font-size: 18px;
 }
 
 p,
