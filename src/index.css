@@ -21,8 +21,8 @@
     --text-font-weight: 300;
     --text-font-family: 'Poppins', sans-serif;
     --title-font-family: 'Poppins', sans-serif;
-    --primary-title-color: #032554;
-    --secondary-title-color: #161616;
+    --secondary-title-color: #032554;
+    --primary-title-color: #161616;
 
     /* Status */
     --aberto-status-color: #032554;
@@ -46,12 +46,18 @@ body {
 }
 
 h1 {
-    color: var(--secondary-title-color);
+    color: var(--primary-title-color);
     font-size: 32px;
 }
 
-h4 {
+h2 {
     color: var(--secondary-title-color);
+    font-size: 30px;
+    font-weight: 600;
+}
+
+h4 {
+    color: var(--primary-title-color);
     font-size: 18px;
 }
 

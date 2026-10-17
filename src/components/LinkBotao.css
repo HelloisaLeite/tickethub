@@ -7,12 +7,17 @@
     cursor: pointer;
     display: flex;
     align-items: center;
+    font-weight: var(--button-text-weight);
+}
+
+.link-botao {
+    background-color: var(--secondary-button-color);
+    border-color: var(--secondary-button-border-color);
 }
 
 .link-botao-primary {
     background-color: var(--primary-button-color);
     color: var(--primary-button-text-color);
-    font-weight: var(--button-text-weight);
 }
 
 .link-botao-primary:hover {
