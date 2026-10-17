@@ -4,7 +4,6 @@ import "./Home.css"
 import Header from "../components/Header";
 import { Link } from "react-router-dom";
 import LinkBotao from "../components/LinkBotao";
-import StatusBadge from "../components/StatusBadge";
 import TabelaChamados from "../components/TabelaChamados";
 
 function Home() {
