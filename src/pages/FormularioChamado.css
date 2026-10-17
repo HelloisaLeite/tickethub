@@ -1,5 +1,134 @@
+.pagina-formulario {
+    min-height: 80vh;
+    padding: 32px 20px 60px;
+}
+
 .voltar-chamados {
+    display: block;
+    width: 40%;
+    margin: 0 auto 5px;
+    color: #333;
+    font-size: 12px;
     text-decoration: none;
+
+}
+
+.formulario-box {
+    width: 50%;
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 786px;
+    margin: 0 auto;
+    padding: 26px 38px;
+    border: 1px solid #cbd8e8;
+    border-radius: 10px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    gap: 10px;
+    flex: 1;
+}
+
+.campo label {
+    color: var(--secondary-title-color);
+    font-weight: 500;
+    margin-top: 12px;
+}
+
+.campo input,
+.campo select,
+.campo textarea {
+    background-color: var(--secondary-button-color);
+    border: 1px solid;
+    border-color: var(--secondary-button-border-color);
+    font-family: var(--text-font-family);
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.campo input,
+select {
+    height: 38px;
+}
+
+.campo textarea {
+    min-height: 96px;
+}
+
+.campos-duplos {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.botoes-formulario {
+    display: flex;
+    gap: 20px;
+    margin-top: 18px;
+}
+
+.container-salvar,
+.container-cancelar {
+    display: flex;
+    flex: 1;
+    min-width: 0;
 }
 
 
+.botao-salvar {
+    box-sizing: border-box;
+    background-color: var(--primary-button-color);
+    width: 100%;
+    min-height: 50px;
+    padding: 10px 20px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: var(--button-text-weight);
+    font-family: var(--text-font-family);
+    font-size: 16px;
+    color: #ffffff;
+}
+
+.botao-cancelar {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    background-color: var(--secondary-button-color);
+    border: 1px solid;
+    border-color: var(--secondary-button-border-color);
+    border-radius: 8px;
+    color: var(--secondary-danger-button-text-color);
+    font-family: var(--text-font-family);
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+@media (max-width: 1024px) {
+    .voltar-chamados {
+        width: 75%;
+    }
+}
+
+@media (max-width: 425px) {
+    .campos-duplos {
+        display: block;
+    }
+
+    .botoes-formulario {
+        display: flex;
+        gap: 20px;
+        margin-top: 18px;
+    }
+
+}
