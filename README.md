@@ -1,4 +1,4 @@
-# ✦ TicketHub — Sistema de Gerenciamento de Chamados ✦
+# ✦ TicketHub — Sistema de Gerenciamento de Chamados 
 
 Sistema web desenvolvido para a disciplina de **Programação para Internet**, utilizando **React**, **Vite** e integração com uma API REST.
 
