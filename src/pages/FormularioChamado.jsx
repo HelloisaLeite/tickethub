@@ -1,10 +1,9 @@
-import {useState} from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import api from "../services/api";
 import Header from "../components/Header";
 import "./FormularioChamado.css";
-import LinkBotao from "../components/LinkBotao";
 
 function FormularioChamado() {
 
@@ -17,6 +16,41 @@ function FormularioChamado() {
 
   /* Usa isso para navegar até as páginas depois do alert */
   const navegar = useNavigate();
+
+  const { id } = useParams();
+  const modoEdicao = Boolean(id);
+
+  // parte de edição: buscar o chamado e preencher os campos
+  useEffect(() => {
+    if (!modoEdicao) return;
+
+    async function buscarChamado() {
+      try {
+        const resposta = await api.get(`/chamados/${id}`);
+        const chamado = resposta.data;
+
+        setTitulo(chamado.titulo || "");
+        setDescricao(chamado.descricao || "");
+        setTipo(chamado.tipo || "");
+        setLocal(chamado.local || "");
+        setPrioridade(chamado.prioridade || "");
+        setDataAbertura(
+          chamado.data_abertura
+            ? chamado.data_abertura.slice(0, 10)
+            : ""
+        );
+      } catch (erro) {
+        console.error(
+          "Erro ao buscar chamado:",
+          erro.response?.data || erro
+        );
+        alert("Não foi possível carregar o chamado para edição.");
+        navegar("/chamados");
+      }
+    }
+
+    buscarChamado();
+  }, [id, modoEdicao]);
 
   /* Função para confirmar cancelamento */
   function cancelarFormulario() {
@@ -33,7 +67,7 @@ function FormularioChamado() {
   async function salvarChamado(event) {
     event.preventDefault();
 
-    const chamado = {
+    const dadosChamado = {
       titulo,
       descricao,
       tipo,
@@ -43,18 +77,24 @@ function FormularioChamado() {
     };
 
     try {
-      const resposta = await api.post("/chamados", chamado);
-
-      console.log("Chamado criado:", resposta.data);
-      alert("Chamado criado com sucesso!");
+      if (modoEdicao) {
+        await api.put(`/chamados/${id}`, dadosChamado);
+        alert("Chamado atualizado com sucesso!");
+      } else {
+        await api.post("/chamados", dadosChamado);
+        alert("Chamado criado com sucesso!");
+      }
 
       navegar("/chamados");
-
     } catch (erro) {
-      console.error("Erro ao criar chamado:", erro.response?.data || erro);
-      alert("Não foi possível criar o chamado. Confira os dados e tente novamente.");
+      console.error(
+        "Erro ao salvar chamado:",
+        erro.response?.data || erro
+      );
+      alert("Não foi possível salvar o chamado. Confira os dados.");
     }
-}
+  }
+
   return (
     <>
       <Header />
@@ -72,19 +112,19 @@ function FormularioChamado() {
 
             <div className="campo">
               <label htmlFor="titulo">Título</label>
-              <input 
-              id="titulo"
-              type="text"
-              placeholder="Lâmpada queimada na sala 45" 
-              value={titulo}
-              onChange={(event) => setTitulo(event.target.value)}
-              required
+              <input
+                id="titulo"
+                type="text"
+                placeholder="Lâmpada queimada na sala 45"
+                value={titulo}
+                onChange={(event) => setTitulo(event.target.value)}
+                required
               />
             </div>
 
             <div className="campo">
               <label htmlFor="descricao">Descrição</label>
-              <textarea 
+              <textarea
                 id="descricao"
                 placeholder="Descreva aqui..."
                 value={descricao}
@@ -96,11 +136,11 @@ function FormularioChamado() {
             <div className="campos-duplos">
               <div className="campo">
                 <label htmlFor="tipo">Tipo</label>
-                <select 
-                id="tipo"
-                value={tipo}
-                onChange={(event) => setTipo(event.target.value)}
-                required>
+                <select
+                  id="tipo"
+                  value={tipo}
+                  onChange={(event) => setTipo(event.target.value)}
+                  required>
                   <option value="">Selecionar</option>
                   <option value="elétrica">Elétrica</option>
                   <option value="hidráulica">Hidráulica</option>
@@ -114,11 +154,11 @@ function FormularioChamado() {
 
               <div className="campo">
                 <label htmlFor="local">Local</label>
-                <select 
-                id="local"
-                value={local}
-                onChange={(event) => setLocal(event.target.value)}
-                required>
+                <select
+                  id="local"
+                  value={local}
+                  onChange={(event) => setLocal(event.target.value)}
+                  required>
                   <option value="">Selecionar</option>
                   <option value="Bloco A">Bloco A</option>
                   <option value="Bloco B">Bloco B</option>
@@ -135,11 +175,11 @@ function FormularioChamado() {
 
             <div className="campo">
               <label htmlFor="prioridae">Prioridade</label>
-              <select 
-              id="prioridade"
-              value={prioridade}
-              onChange={(event) => setPrioridade(event.target.value)}
-              required>
+              <select
+                id="prioridade"
+                value={prioridade}
+                onChange={(event) => setPrioridade(event.target.value)}
+                required>
                 <option value="">Selecionar</option>
                 <option value="alta">Alta</option>
                 <option value="média">Média</option>
@@ -150,34 +190,34 @@ function FormularioChamado() {
             <div className="campo">
               <label htmlFor="data">Data</label>
               <input
-                  id="dataAbertura"
-                  type="date"
-                  value={dataAbertura}
-                  onChange={(event) => setDataAbertura(event.target.value)}
-                  required
-                />
+                id="dataAbertura"
+                type="date"
+                value={dataAbertura}
+                onChange={(event) => setDataAbertura(event.target.value)}
+                required
+              />
             </div>
 
-        
+
             <div className="botoes-formulario">
               <div className="container-salvar">
                 <button type="submit" className="botao-salvar">
                   Salvar chamado
                 </button>
               </div>
-            
-            
+
+
               <div className="container-cancelar">
-                  <button
+                <button
                   type="button"
                   className="botao-cancelar"
                   onClick={cancelarFormulario}
-                  >
-                    Cancelar
-                  </button>
+                >
+                  Cancelar
+                </button>
               </div>
             </div>
-            
+
           </form>
         </section>
 

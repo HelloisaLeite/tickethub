@@ -97,6 +97,10 @@ select {
     color: #ffffff;
 }
 
+.botao-salvar:hover{
+    background-color: var(--primary-button-hover-color);
+}
+
 .botao-cancelar {
     display: flex;
     flex: 1;
